@@ -3,8 +3,8 @@
 using namespace std;
 
 Observateur::Observateur(pair<double, double> origine, double angle, double rayon) {
-	_angleTotal = 90.0;
-	_angle = angle;
+	_angleTotal = degreesToRadians(90.0);
+	_angle = degreesToRadians(angle);
 	_origine = origine;
 	_rayon = rayon;
 
@@ -23,10 +23,14 @@ void Observateur::update() {
 	//double y = x * tan(_angleTotal);
 	double x = _rayon * cos(_angleTotal);
 	double y = _rayon * sin(_angleTotal);
-	position.first = _origine.first + x;
-	position.second = _origine.second + y;
+	position.first = fabs(_origine.first + x) < 0.0001 ? 0 : _origine.first + x;
+	position.second = fabs(_origine.second + y) < 0.0001 ? 0 : _origine.second + y;
 	_trace.push_back(position);
 
 }
 
 vector< pair<double, double> > Observateur::getTrace() { return _trace; }
+
+double Observateur::degreesToRadians(double degrees) {
+	return M_PI * degrees / 180;
+}

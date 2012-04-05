@@ -18,6 +18,9 @@ class Observateur {
 		Observateur(std::pair<double, double> origine = std::pair<double,double>(0,0), double angle = 10.0, double rayon = 5.0);
 		void update();
 		std::vector< std::pair<double, double> > getTrace();
+	
+	private:
+		double degreesToRadians(double degrees);
 
 };
 
