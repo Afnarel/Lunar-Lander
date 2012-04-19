@@ -27,10 +27,20 @@ void Observateur::update() {
 	position.second = fabs(_origine.second + y) < 0.0001 ? 0 : _origine.second + y;
 	_trace.push_back(position);
 
+
+
 }
 
 vector< pair<double, double> > Observateur::getTrace() { return _trace; }
 
 double Observateur::degreesToRadians(double degrees) {
 	return M_PI * degrees / 180;
+}
+
+double Observateur::getX() {
+	return _trace.back().first;
+}
+
+double Observateur::getY() {
+	return _trace.back().second;
 }

@@ -14,13 +14,15 @@ class Observateur {
 		double _rayon;
 		std::vector< std::pair<double, double> > _trace;
 
+		double degreesToRadians(double degrees);
+
 	public:
 		Observateur(std::pair<double, double> origine = std::pair<double,double>(0,0), double angle = 10.0, double rayon = 5.0);
 		void update();
 		std::vector< std::pair<double, double> > getTrace();
-	
-	private:
-		double degreesToRadians(double degrees);
+
+		double getX();
+		double getY();
 
 };
 

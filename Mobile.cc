@@ -21,3 +21,11 @@ void Mobile::update() {
  pair<double, double> Mobile::getPos() { return _pos; }
 
  vector< pair<double, double> > Mobile::getTrace() { return _trace; }
+
+ double Mobile::getX() {
+	return _trace.back().first;
+}
+
+double Mobile::getY() {
+	return _trace.back().second;
+}
