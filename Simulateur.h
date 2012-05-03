@@ -17,6 +17,8 @@ class Simulateur {
 		void displayTraceObservateur();
 		void displayTraceTeta();
 		void displayTestTeta(int t);
+		std::vector<double> getTraceTetas();
+		std::vector< std::pair<double, double> > getTraceObs();
 };
 
 #endif

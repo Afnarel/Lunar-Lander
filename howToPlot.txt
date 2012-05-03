@@ -17,3 +17,34 @@ pour faire en sorte que le "lemme" (Lunar Lander) se pose
 doucement sur le mobile en mouvement.
 
 Si on peut faire le lien avec l'animation, c'est excellent !
+
+=============================
+t = temps (indice dans le tableau des traces + 1) : coefficient de la vitesse
+xp, yp : position de l'observateur
+x0, y0 : position initiale du mobile
+vx, vy : vitesse du mobile
+
+sinTeta * x0 + t * sinTeta * vx - cosTeta * y0 - t * cosTeta * vy = xp * sinTeta - yp * cosTeta
+
+Matrice C :
+	t lignes (une ligne par intervalle de temps) ;
+	4 colonnes :
+		sinTeta
+		t * sinTeta
+		- cosTeta
+		- t * cosTeta
+
+Matrice X :
+	1 colonne
+	4 lignes :
+		x0
+		vx
+		y0
+		vy
+
+Matrice Y :
+	1 colonne
+	t lignes (une ligne par intervalle de temps) :
+		Chaque ligne : xp * sinTeta - yp * cosTeta
+
+( Transposée(C) * C ) * X = Transposée(C) * Y

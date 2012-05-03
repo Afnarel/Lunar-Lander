@@ -1,11 +1,14 @@
-CC= g++ -llapack -larmadillo
+CC= g++
 
-OBJECTS= Estimateur.o Simulateur.o Mobile.o Observateur.o main.o
+OBJECTS= Matrix.o Estimateur.o Simulateur.o Mobile.o Observateur.o main.o
 
 TARGET= simulateur
 
 $(TARGET) : $(OBJECTS)
 	$(CC) $(OBJECTS) -o $(TARGET)
+
+Matrix.o : Matrix.cc Matrix.h
+	$(CC) -o Matrix.o -c Matrix.cc
 
 Estimateur.o : Simulateur.o Estimateur.cc Estimateur.h
 	$(CC) -o Estimateur.o -c Estimateur.cc
@@ -19,7 +22,7 @@ Mobile.o : Mobile.cc Mobile.h
 Observateur.o : Observateur.cc Observateur.h
 	$(CC) -o Observateur.o -c Observateur.cc
 
-main.o : Simulateur.o main.cc
+main.o : Simulateur.o main.cc Matrix.o
 	$(CC) -o main.o -c main.cc
 
 clean :

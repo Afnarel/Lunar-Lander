@@ -1,8 +1,6 @@
 #ifndef __OBSERVATEUR__
 #define __OBSERVATEUR__
 
-#include "Mobile.h"
-
 #include <utility>
 #include <vector>
 #include <cmath>

@@ -81,3 +81,11 @@ void Simulateur::displayTestTeta(int t) {
 
 	cout << endl;
 }
+
+vector<double> Simulateur::getTraceTetas() {
+	return tetas;
+}
+
+vector< pair<double, double> > Simulateur::getTraceObs() {
+	return obs.getTrace();
+}

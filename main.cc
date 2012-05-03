@@ -4,6 +4,7 @@
 #include <iomanip>
 
 #include "Simulateur.h"
+#include "Estimateur.h"
 
 using namespace std;
 
@@ -20,6 +21,12 @@ int main() {
 	simulateur.displayTestTeta(1);
 	simulateur.displayTestTeta(2);
 	simulateur.displayTestTeta(3);
+
+	Estimateur estimateur(&simulateur);
+	vector<double> resultat = estimateur.estimate();
+	for(size_t i=0; i<resultat.size(); i++)
+		cout << resultat[i] << " ";
+	cout << endl;
 
 	/*
 		Todo :
