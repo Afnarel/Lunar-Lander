@@ -1,6 +1,3 @@
-plot "radians.dat" using 1:2 title 'Mon Titre' with lines
-
-
 On a un simulateur. On connait x0, y0, vx, vy, xp(t), yp(t)
 et donne en sortie la suite xp(t), 
 
@@ -8,7 +5,7 @@ L'estimateur dispose de xp(t), yp(t) et teta(t) et en déduit
 une estimation de x0, y0, vx, vy
 
 
-Deux approches (voir le COURS) :
+Deux approches :
 	* l'approche globale : résolution d'un système d'équations (pivot de Gauss => utiliser une lib)
 	* l'approche itérative : correction à chaque instant
 

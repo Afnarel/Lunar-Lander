@@ -23,6 +23,7 @@ vector<double> Estimateur::estimate() {
 		Y(i) = observateur[i].first * sin(tetas[i]) - observateur[i].second * cos(tetas[i]);
 	}
 
+        // Use armadillo to solve the linear system C*X=Y
 	vec resultat = solve(C,Y);
 	vector<double> retour;
 
