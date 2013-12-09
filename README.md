@@ -17,4 +17,4 @@ You should get a `simulateur` executable.
 
 Then, to plot the results, you can use something like:
 
-  plot "radians.dat" using 1:2 title 'Simulation' with lines
+    plot "radians.dat" using 1:2 title 'Simulation' with lines
